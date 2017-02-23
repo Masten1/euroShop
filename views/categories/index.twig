@@ -1,0 +1,27 @@
+<section class="categories-wrapper">
+    <div class="container">
+        {% for item in categories %}
+            {% if item.getProducts() %}
+                <div id="{{ item.getBlockHref() }}" class="category-title">{{ item.name | raw }}</div>
+                <div class="clearfix category-products">
+                    {% for product in item.getProducts() %}
+                        <div class="category-product-item">
+                            <a href="{{ product.getHref() }}">
+                                <figure>
+                                    {% if product.isRecommend() %}
+                                        <span class="product-recommend"></span>
+                                    {% endif %}
+
+                                    <img src="{{ product.img }}" alt="{{ product.title }}">
+                                </figure>
+                                <span class="cat-product-name">{{ product.title }}</span>
+                                <span class="cat-product-price">{{ product.getPrice() }} грн</span>
+                                <div class="cat-product-btn">Подробнее</div>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</section>

@@ -1,0 +1,25 @@
+<div class="articles-wrapper">
+    <div class="articles-wrapper-title">Полезная информация</div>
+
+    <div class="articles-list">
+        {% for item in articles %}
+            <div class="article-item clearfix">
+                <figure>
+                    <img src="{{ item.image }}" alt="{{ item.title | raw }}">
+                </figure>
+
+                <div class="article-item-right-side">
+                    <a href="{{ item.getHref() }}">
+                        {{ item.title | raw }}
+                    </a>
+
+                    <div class="article-short-text">
+                        {{ item.shortText | raw }}
+                    </div>
+
+                    <span>{{ item.getStringDate() }}</span>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

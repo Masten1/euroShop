@@ -1,0 +1,12 @@
+<div class="why-we-blocks clearfix">
+    {% for item in whyWe %}
+        <div class="why-we-item">
+            <figure>
+                <img src="{{ item.icon }}" alt="{{ item.title | raw }}" title="{{ item.title | raw }}">
+            </figure>
+
+            <span class="why-we-title">{{ item.title | raw }}</span>
+            <div class="why-we-description">{{ item.text | raw }}</div>
+        </div>
+    {% endfor %}
+</div>

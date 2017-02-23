@@ -1,0 +1,87 @@
+.articles-wrapper
+  width: 80%
+  margin: 0 auto
+  padding-top: 50px
+  padding-bottom: 50px
+
+.articles-list
+  padding-top: 50px
+
+.articles-wrapper-title
+  margin-bottom: 20px
+  color: #34495e
+  border-bottom: 1px solid #34495e
+  font-family: $circeBold
+  font-size: 28px
+
+.article-item
+  width: 100%
+  border-bottom: 1px solid #1a1a21
+  margin-bottom: 50px
+
+  &:last-of-type
+    border-bottom: none
+    margin-bottom: 0
+
+  figure
+    display: block
+    width: 200px
+    height: 200px
+    float: left
+    margin-right: 30px
+
+    img
+      width: 100%
+      height: auto
+      max-width: 100%
+      max-height: 100%
+
+  .article-item-right-side
+
+    a
+      color: #f7931e
+      font-family: $circeBold
+      font-size: 18px
+      margin-bottom: 10px
+      +transition(all, 0.3s)
+
+      &:hover, &:active, &:focus
+        color: #b5670c
+        text-decoration: none
+
+    .article-short-text
+      font-family: $CirceLight
+      font-size: 16px
+      color: #34495e
+
+    span
+      color: #5e656d
+      margin-top: 30px
+      display: block
+
+.article-wrapper-one
+  width: 80%
+  margin: 0 auto
+  padding: 50px 0
+
+  .article-one-date
+    color: #6f8396
+    font-size: 15px
+    margin-bottom: 15px
+    display: block
+    width: 100%
+
+  .article-one-title
+    font-size: 27px
+    margin-bottom: 25px
+    display: block
+    line-height: 34px
+    text-transform: uppercase
+    color: #f7931e
+    font-family: $circeBold
+
+  .article-one-text
+    font-size: 15px
+    line-height: 30px
+    word-wrap: break-word
+    color: #34495e

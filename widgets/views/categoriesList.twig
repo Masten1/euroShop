@@ -1,0 +1,24 @@
+
+<div id="slick-home-categories" class="clearfix">
+    {% for item in categories %}
+        {% set test = loop.index - 1 %}
+
+        {% if test % 8 == 0 %}<div class="categories-slide-line clearfix">{% endif %}
+
+            <div class="cat-one">
+                <a href="{{ item.getHref() }}">
+                    <figure>
+                        <img src="{{ item.photo }}" alt="{{ item.name }}">
+                    </figure>
+                    <span class="cat-name">{{ item.name }}</span>
+                    <span class="cat-price">От {{ item.price }} грн</span>
+                </a>
+            </div>
+
+        {% if test % 9 == 8 or loop.last %}</div>{% endif %}
+    {% endfor %}
+
+    <div class="cat-helper-img">
+        <img src="/theme/img/cat-elips.png" alt="">
+    </div>
+</div>

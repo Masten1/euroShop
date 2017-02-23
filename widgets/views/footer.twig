@@ -1,0 +1,36 @@
+<section class="footer clearfix">
+    <div class="footer-menu-block">
+        <div class="head-footer">{{'навигация' | trans}}</div>
+        {% for item in categories %}
+            <a href="{{ item.getHref() }}">{{ item.name }}</a><br>
+        {% endfor %}
+    </div>
+
+    <div class="footer-menu-block">
+        <div class="head-footer">{{'контактная информация' | trans}}</div>
+        <div class="footer-phone">
+            <p>Тел:</p>
+            <a href="{{'ссылка на телефон №1' | trans}}">{{'телефон №1' | trans}}</a><br>
+            <a href="{{'ссылка на телефон №2' | trans}}">{{'телефон №2' | trans}}</a><br><br>
+
+            <p>Почта:</p>
+            <a href="{{'ссылка на почту №1' | trans}}">{{'почта №1' | trans}}</a><br><br>
+
+            <p>Соц. сети:</p>
+            <div class="footer-soc">
+                <a rel="nofollow" target="_blank" class="png-fb soc-footer" href="https://www.facebook.com/Euro-tehnika-1201039180015573/"></a>
+                <a rel="nofollow" target="_blank" class="png-vk soc-footer" href="https://vk.com/eurotehnikacomua"></a>
+                <a rel="nofollow" target="_blank" class="png-gp soc-footer" href=""></a>
+                <a rel="nofollow" target="_blank" class="png-inst soc-footer" href="https://www.instagram.com/eurotehnikacomua/"></a>
+                <a rel="nofollow" target="_blank" class="png-okurok soc-footer" href="https://ok.ru/group/54406873481453"></a>
+                <a rel="nofollow" target="_blank" class="png-tw soc-footer" href="https://twitter.com/euro_tehnika"></a>
+                <a rel="nofollow" target="_blank" class="png-yt soc-footer" href="https://www.youtube.com/?gl=UA"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-menu-block">
+        <div class="head-footer">{{'дополнительная информация' | trans}}</div>
+        <div class="copy">{{ 'Copyright euro-tehnika © 2015-2017' | trans }}</div>
+    </div>
+</section>

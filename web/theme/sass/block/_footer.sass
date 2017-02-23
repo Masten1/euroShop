@@ -1,0 +1,74 @@
+.footer
+  background: white
+  padding-top: 30px
+  text-align: center
+  padding-bottom: 20px
+  background: url("/theme/img/footer-elips.png") 100% -65% no-repeat
+
+.footer-menu-block
+  display: inline-block
+  width: 346px !important
+  margin-top: 30px
+  vertical-align: top
+  text-align: left
+
+  .head-footer
+    @include font-face-helper($circeBold, 19px, #224240)
+    text-transform: uppercase
+    padding-bottom: 8px
+    border-bottom: 5px solid #4f827f
+    margin-bottom: 10px
+
+  a, p, .copy
+    color: #224240
+    font-size: 15px
+    line-height: 23px
+    text-decoration: none
+    font-variant: small-caps
+    margin: 0
+    font-family: $circeBold
+    +transition(all, 0.3s)
+
+    &:hover
+      text-decoration: none
+      color: #1a3342
+
+
+  .footer-soc
+
+    .soc-footer
+      width: 20px
+      height: 20px
+      display: inline-block
+      margin: 0 3px
+
+      &.png-fb
+        background-image: url("/theme/img/socials2/fb.png")
+        background-repeat: no-repeat
+
+      &.png-vk
+        background-image: url("/theme/img/socials2/vk.png")
+        background-repeat: no-repeat
+
+      &.png-gp
+        background-image: url("/theme/img/socials2/g+.png")
+        background-repeat: no-repeat
+
+      &.png-inst
+        background-image: url("/theme/img/socials2/inst.png")
+        background-repeat: no-repeat
+
+      &.png-okurok
+        background-image: url("/theme/img/socials2/odn.png")
+        background-repeat: no-repeat
+
+      &.png-tw
+        background-image: url("/theme/img/socials2/tw.png")
+        background-repeat: no-repeat
+
+      &.png-yt
+        background-image: url("/theme/img/socials2/yt.png")
+        background-repeat: no-repeat
+
+  &:nth-of-type(2n)
+    margin: 30px 40px 0 40px

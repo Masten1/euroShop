@@ -1,0 +1,210 @@
+<section class="product-one-wrapper">
+    <div class="product-one-up clearfix">
+        <div class="product-one-upper-info">
+            <div class="products-rating {% if product.rating %}products-rating-{{ product.rating | raw }}{% endif %}">
+                <span class="product-rating-star glyphicon glyphicon-star"></span>
+                <span class="product-rating-star glyphicon glyphicon-star"></span>
+                <span class="product-rating-star glyphicon glyphicon-star"></span>
+                <span class="product-rating-star glyphicon glyphicon-star"></span>
+                <span class="product-rating-star glyphicon glyphicon-star"></span>
+            </div>
+
+            <div class="product-title">{{ product.title | raw }}</div>
+        </div>
+        <div class="product-one-up-left">
+
+            <div class="product-btns-helper">
+                <div class="products-btns-share">
+                    <span class="products-btns-share-title">Поделиться: </span>
+                    <script type="text/javascript">(function() {
+                            if (window.pluso)if (typeof window.pluso.start == "function") return;
+                            if (window.ifpluso==undefined) { window.ifpluso = 1;
+                                var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
+                                s.type = 'text/javascript'; s.charset='UTF-8'; s.async = true;
+                                s.src = ('https:' == window.location.protocol ? 'https' : 'http')  + '://share.pluso.ru/pluso-like.js';
+                                var h=d[g]('body')[0];
+                                h.appendChild(s);
+                            }})();</script>
+                    <div class="pluso" data-background="transparent" data-options="medium,round,line,horizontal,nocounter,theme=08" data-services="facebook,twitter,google,vkontakte,odnoklassniki,email"></div>
+                </div>
+
+                <div class="product-btns-helper-block clearfix">
+                    <div class="product-btns-helper-half">
+                        <a class="product-description-item" href="#product-description">Описание</a>
+                    </div>
+                    <div class="product-btns-helper-half">
+                        <a class="product-description-item" href="#product-description">Характеристики</a>
+                    </div>
+                </div>
+            </div>
+
+            {% if product.getBehavior('galleryBehavior').getImages() %}
+                <div id="slick-products-gallery">
+                    {% for image in product.getBehavior('galleryBehavior').getImages() %}
+                        <div class="item-slider-product">
+                            <a href="{{ image.getUrl('medium') }}" title="{{ product.title | raw }}">
+                                <span></span>
+                                <img src="{{ image.getUrl('medium') }}" title="{{ product.title | raw }}" alt="{{ product.title | raw }}">
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="item-slider-product">
+                    <a href="{{ product.img }}" title="{{ product.title | raw }}">
+                        <span></span>
+                        <img src="{{ product.img }}" title="{{ product.title | raw }}" alt="{{ product.title | raw }}">
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="product-one-up-right">
+
+            {% if product.isInStock() %}
+                <div class="product-one-right-info clearfix">
+                    <span class="product-price-title">
+                        Цена:
+                    </span>
+
+                    <div class="product-availability">
+                        <span class="glyphicon glyphicon-ok"></span>
+                        <p>Есть в наличии</p>
+                    </div>
+                </div>
+
+                <div class="product-price-line clearfix">
+                    <div class="product-price">{{ product.getPrice() }} <span>грн</span></div>
+
+                    {% if product.getOldPrice() %}
+                        <div class="product-old-price">{{ product.getOldPrice() }} <span>грн</span></div>
+                    {% endif %}
+
+                    <div class="product-btn"> <span class="glyphicon glyphicon-shopping-cart"></span>Купить</div>
+                </div>
+
+                <div class="product-buy-click clearfix">
+                    <div class="product-buy-click-left">
+                        <div class="product-buy-click-icon">
+                            <span class="glyphicon glyphicon-earphone"></span>
+                        </div>
+                        <p>Заказать товар в 1 клик</p>
+                        <p>Менеджер уточнит у Вас все детали</p>
+                    </div>
+                    <form method="POST" action="/callback/save" id="callback-form-product-one">
+                        <div class="callback-form-phone clearfix">
+                            <input id="callback-phone-product" name="phone" type="tel" placeholder="38( ___ ) ___ - __ - __">
+                            <button class="feedback-form-submit">Заказать</button>
+                        </div>
+                    </form>
+                    <div class="callback-message-product">
+                        <p>Ваша заявка отправлена. Наши менеджеры свяжутся с Вами в ближайшее время <span class="glyphicon glyphicon-ok"></span></p>
+                    </div>
+                </div>
+
+                {% if product.getOffer() %}
+                    <div class="product-offer">
+                        <div class="product-offer-title"><span class="glyphicon glyphicon-thumbs-up"></span>Акция</div>
+                        <div id="getting-started" data-date="{{ product.getOffer().dateToEnd | raw  }}"></div>
+                        <a href="{{ product.getOffer().url | raw }}" target="_blank" class="clearfix">
+                            <div class="product-offer-date-block">
+                                <div class="product-offer-date-block-title">До конца акции осталось:</div>
+                                <div class="product-offer-date-block-wrapper clearfix">
+                                    <div class="product-offer-date-days product-offer-item">
+                                        <div class="getting-day"></div>
+                                        <span>Дни</span>
+                                    </div>
+                                    <div class="product-offer-date-hours product-offer-item">
+                                        <div class="getting-hour"></div>
+                                        <span>Часы</span>
+                                    </div>
+                                    <div class="product-offer-date-minutes product-offer-item">
+                                        <div class="getting-minute"></div>
+                                        <span>мин</span>
+                                    </div>
+                                    <div class="product-offer-date-seconds product-offer-item">
+                                        <div class="getting-second"></div>
+                                        <span>сек</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-offer-image">
+                                <img src="{{ product.getOffer().image }}" alt="Акция">
+                            </div>
+                        </a>
+                    </div>
+                {% endif %}
+
+                <div class="product-delivery">
+                    <div class="product-delivery-title">Доставка:</div>
+
+                    <div class="product-delivery-block">
+                        {{ product.howBuy | raw }}
+                    </div>
+                </div>
+
+            {% else %}
+                <div class="product-one-right-info clearfix">
+
+                    <div class="product-availability product-not-availability">
+                        <span class="glyphicon glyphicon-info-sign"></span>
+                        <p>Нет в наличии</p>
+                    </div>
+                </div>
+            {% endif %}
+
+
+        </div>
+
+    </div>
+
+    <div id="product-description" class="product-one-down clearfix">
+        <div class="col-sm-6-product">
+            <div class="product-one-down-title">характеристики</div>
+            <div class="product-one-down-text">{{ product.description | raw }}</div>
+        </div>
+        <div class="col-sm-6-product">
+            <div class="product-one-down-title">описание</div>
+            <div class="product-one-down-text">{{ product.howBuy | raw }}</div>
+        </div>
+    </div>
+</section>
+
+<div class="buy-product-wrapper">
+    <form method="POST" action="/product/buy" id="form-product-buy">
+        <span class="close-form">X</span>
+
+        <div class="form-helper-text-small">{{'Для осуществления предзаказа Вам необходимо заполнить все поля формы ниже:' | trans}}</div>
+
+        <div class="form-line">
+            <label for="customer-name">ФИО: <span>*</span></label>
+            <input id="customer-name" type="text" name="name">
+        </div>
+        <div class="form-line">
+            <label for="customer-phone">Ваш телефон: <span>*</span></label>
+            <input id="customer-phone" type="tel" name="phone" placeholder="38( ___ ) ___ - __ - __">
+        </div>
+        <div class="form-line">
+            <label for="customer-mail">Ваш e-mail: <span>*</span></label>
+            <input id="customer-mail" type="email" name="mail">
+        </div>
+        <div class="form-line">
+            <label for="customer-text">Комментарий к заказу:</label>
+            <textarea id="customer-text" name="text"></textarea>
+        </div>
+
+        <div class="form-line clearfix">
+            <div class="customer-count-info">
+                <span>{{'Общая цена заказа:' | trans}}</span>
+
+                <div id="customer-count-result">{{ product.getPrice() }} грн.</div>
+            </div>
+        </div>
+
+        <input type="hidden" id="product-pk" value="{{ product.primaryKey }}">
+
+        <div class="customer-message">{{'Ваш заказ успешно оформлен, наши менеджеры свяжутся с Вами в ближайшее время:' | trans}}</div>
+
+        <button>{{'Купить' | trans}}</button>
+    </form>
+</div>

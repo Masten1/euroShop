@@ -1,0 +1,89 @@
+.callbackForm
+  display: none
+  position: fixed
+  background: rgba(228,228,228,0.82)
+  top: 0
+  left: 0
+  z-index: 9999
+  overflow: hidden
+  right: 0
+  bottom: 0
+
+#callback-form
+  width: 40%
+  margin: 30px auto 0 auto
+  position: relative
+  border: 1px solid #d8d8d8
+  background: #fff
+  border-radius: 5px
+  text-align: center
+  padding: 48px 40px 10px 40px
+
+  .close-callback
+    position: absolute
+    top: 10px
+    right: 10px
+    color: #000
+    border: 1px solid #000
+    border-radius: 50%
+    padding: 4px
+    width: 20px
+    height: 20px
+    font-size: 11px
+    text-align: center
+    line-height: 11px
+    font-weight: bold
+    cursor: pointer
+
+  .callback-form-phone
+    margin-bottom: 10px
+
+    label
+      display: inline-block
+      width: 30%
+      font-family: "CirceLight",sans-serif
+      font-size: 17px
+      color: #000
+      text-align: right
+      padding-right: 10px
+      vertical-align: top
+      line-height: 20px
+      padding-top: 7px
+
+    input
+      display: inline-block
+      width: 60%
+      font-family: "CirceLight",sans-serif
+      font-size: 17px
+      color: #000
+      padding: 2px 10px
+
+      &.error
+        border: 1px solid red
+
+  .feedback-form-submit
+    background: #33a1ff
+    color: #fff
+    padding: 10px
+    font-size: 16px
+    width: 160px
+    text-align: center
+    border-radius: 2px
+    cursor: pointer
+    margin: 5px 0
+    border: none
+    +transition(all,.4s)
+    &:hover, &:focus, &:active
+      background: #007ce6
+
+  .callback-message
+    font-family: "CirceLight",sans-serif
+    color: green
+    font-weight: bold
+    display: none
+
+    p
+      margin: 0
+      
+    span
+      font-size: 10px

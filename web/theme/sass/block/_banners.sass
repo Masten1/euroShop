@@ -1,0 +1,46 @@
+.banner-item
+  width: 100%
+  height: 500px !important
+
+.banner-item-title
+  font-size: 45px
+  color: white
+  display: block
+  width: 70%
+  float: left
+  padding-left: 150px
+  padding-top: 50px
+  margin-bottom: 50px
+  font-family: $CirceLight
+
+.banner-item-subTitle
+  font-size: 35px
+  color: white
+  padding-left: 150px
+  display: block
+  width: 70%
+  font-family: $CirceLight
+
+#slick-banners-wrapper
+  position: relative
+
+  .slick-arrow
+    position: absolute
+    top: 40%
+    outline: none
+    +user-select(none)
+    cursor: pointer
+    z-index: 2000
+    border: none
+
+    &.slick-prev
+      background: url("/theme/img/arrow-left.png") center center no-repeat
+      width: 24px
+      height: 88px
+      left: 10px
+
+    &.slick-next
+      background: url("/theme/img/arrow-right.png") center center no-repeat
+      width: 24px
+      height: 88px
+      right: 10px

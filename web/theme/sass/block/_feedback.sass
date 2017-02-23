@@ -1,0 +1,108 @@
+.feedbackForm
+  background: url("/theme/img/feedback-bg.jpg") center center no-repeat
+  background-size: cover
+  width: 100%
+  height: 600px
+  padding: 50px 60px
+  font-family: $CirceLight
+
+.feedbackForm-content
+  width: 30%
+  float: left
+
+.feedbackFormTitle
+  font-family: $circeBold
+  font-size: 40px
+  text-transform: uppercase
+  text-align: left
+  color: #120603
+  line-height: 42px
+  margin-bottom: 20px
+  display: block
+
+#feedback-form
+
+  .feedback-form-name, .feedback-form-mail, .feedback-form-text
+    background: white
+    margin-bottom: 10px
+    &.error
+      border: 1px solid red
+
+  .feedback-form-name
+    input
+      background: url("/theme/img/forms/form-index-user.png") 14px no-repeat
+
+  .feedback-form-mail
+    input
+      background: url("/theme/img/forms/form-index-message.png") 14px no-repeat
+
+  textarea
+    outline: none
+    +user-select(none)
+    color: black
+    padding: 10px 10px 10px 43px
+    background: url("/theme/img/forms/form-message.png") 14px 13px no-repeat
+    border: none
+    height: 160px
+    width: 100%
+    +input-placeholder()
+      color: #a7a29e
+
+  input
+    outline: none
+    +user-select(none)
+    color: black
+    padding: 10px 10px 10px 43px
+    height: 45px
+    border: none
+    width: 100%
+    +input-placeholder()
+      color: #a7a29e
+
+  .feedback-form-submit
+    border: none
+    outline: none
+    +user-select(none)
+    background: #4f827f
+    color: white
+    text-align: center
+    font-size: 20px
+    padding: 15px 30px
+    margin-bottom: 20px
+
+  .form-helper-message
+    font-size: 18px
+    color: #d9e8e7
+    display: block
+
+.feedback-message
+  color: green
+  font-size: 22px
+  line-height: 27px
+  background: white
+  padding: 15px
+  margin-top: 10px
+  font-family: $CirceLight
+  position: relative
+  display: none
+  padding-bottom: 1px
+
+  &.active
+    display: block
+
+    span
+      opacity: 1
+
+  span
+    position: absolute
+    right: 10px
+    top: 5px
+    color: green
+    opacity: 0
+    +transition(all, 0.5s)
+
+.status-green
+  background: #aadeaa !important
+
+.status-red
+  background: #f5acac !important

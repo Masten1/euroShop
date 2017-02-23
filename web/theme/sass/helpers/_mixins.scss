@@ -1,0 +1,15 @@
+@mixin radial-gradient($from, $to) {
+  background: -moz-radial-gradient(right, circle cover, $from 16%, $to 84%);
+  background: -webkit-gradient(radial, right center, 0px, right right, 84%, color-stop(16%, $from), color-stop(84%, $to));
+  background: -webkit-radial-gradient(right, circle cover, $from 16%, $to 84%);
+  background: -o-radial-gradient(right, circle cover, $from 16%, $to 84%);
+  background: -ms-radial-gradient(right, circle cover, $from 16%, $to 84%);
+  background: radial-gradient(right, circle cover, $from 16%, $to 84%);
+  background-color: $from;
+}
+
+@mixin font-face-helper($ff, $fs, $color) {
+  font-size: $fs;
+  font-family: $ff;
+  color: $color;
+}

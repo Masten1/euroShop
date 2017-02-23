@@ -1,0 +1,23 @@
+<div id="callback-button" class="callback-phone callback-show">
+    <div class="callback-ph-circle"></div>
+    <div class="callback-ph-circle-fill"></div>
+    <div class="callback-ph-img-circle"></div>
+</div>
+
+<section class="callbackForm">
+
+    <form method="POST" action="/callback/save" id="callback-form">
+        <span class="close-callback" style="">X</span>
+
+        <div class="callback-form-phone">
+            <label for="callback-phone">{{'Ваш телефон:' | trans}} <span>*</span></label>
+            <input id="callback-phone" name="phone" type="tel" placeholder="38( ___ ) ___ - __ - __">
+        </div>
+
+        <div class="callback-message">
+            <p>{{'Ваша заявка отправлена. Наши менеджеры свяжутся с Вами в ближайшее время' | trans}} <span class="glyphicon glyphicon-ok"></span></p>
+        </div>
+        <button class="feedback-form-submit">{{'Заказать звонок' | trans}}</button>
+    </form>
+
+</section>

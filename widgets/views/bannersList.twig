@@ -1,0 +1,8 @@
+<section id="slick-banners-wrapper">
+    {% for item in banners %}
+        <div class="banner-item" style="background: url('{{ item.image }}') center center no-repeat; background-size: cover">
+            <span class="banner-item-title">{{ item.title | raw }}</span>
+            <span class="banner-item-subTitle">{{ item.subTitle | raw }}</span>
+        </div>
+    {% endfor %}
+</section>

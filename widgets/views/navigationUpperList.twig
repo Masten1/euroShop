@@ -1,0 +1,19 @@
+<div class="nav-upper-list">
+
+    <div class="upper-phone-list">
+        <a href="{{'ссылка на телефон №3' | trans}}"><span class="glyphicon glyphicon-earphone"></span>{{'телефон №3' | trans}}</a>
+        <a href="{{'ссылка на телефон №4' | trans}}"><span class="glyphicon glyphicon-earphone"></span>{{'телефон №4' | trans}}</a>
+        <a href="{{'ссылка на телефон №5' | trans}}"><span class="glyphicon glyphicon-earphone"></span>{{'телефон №5' | trans}}</a>
+        <a href="{{'ссылка на телефон №6' | trans}}"><span class="glyphicon glyphicon-earphone"></span>{{'телефон №6' | trans}}</a>
+    </div>
+
+    <ul>
+        {% for item in navigation %}
+            <li>
+                <a class="header-nav--upper-right-item" href="{{ item.getHref() }}">
+                    {{ item.title | raw }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

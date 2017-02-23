@@ -1,0 +1,18 @@
+<div class="static-page-wrapper">
+    <div class="container">
+        <div id="breadcrumbs">
+            <div class="breadcrumbs clearfix">
+                <div itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <a href="/" itemprop="url">
+                        <span itemprop="title">{{ "Магазин" | trans }}</span>
+                    </a>
+                    <span class="glyphicon glyphicon-certificate"></span>
+                </div>
+                <span class="breadcrumb-last" itemprop="title">{{ page.title | raw }}</span>
+            </div>
+        </div>
+
+        <div class="static-page-title">{{ page.title | raw }}</div>
+        <div class="static-page-content">{{ page.text | raw }}</div>
+    </div>
+</div>

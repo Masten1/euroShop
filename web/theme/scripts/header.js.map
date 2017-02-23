@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "header.js",
+  "sourceRoot": "",
+  "sources": [
+    "header.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;EAAA,MAAA,CAAO,SAAC,CAAD;AAEL,QAAA;IAAA,WAAA,GAAc,CAAA,CAAE,mBAAF;WAEd,WAAW,CAAC,KAAZ,CAAkB,SAAC,CAAD;MAChB,CAAC,CAAC,eAAF,CAAA;aACA,CAAA,CAAE,IAAF,CAAI,CAAC,WAAL,CAAiB,MAAjB;IAFgB,CAAlB;EAJK,CAAP;AAAA"
+}

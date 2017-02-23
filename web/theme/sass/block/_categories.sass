@@ -1,0 +1,76 @@
+.categories-section
+  margin-top: 60px
+
+#slick-home-categories
+  padding: 0 50px
+  position: relative
+
+.cat-one
+  width: 240px
+  height: 365px
+  float: left
+  z-index: 1000
+  position: relative
+  margin-right: 95px
+  margin-bottom: 20px
+
+  &:hover, &:active, &:focus
+    .cat-name
+      color: #6d2929
+      font-weight: bold
+
+    .cat-price
+      color: #dc7b09
+
+  &:nth-child(4n)
+    margin-right: 0
+
+  a
+    &:hover, &:active, &:focus
+      text-decoration: none
+
+
+  figure
+    width: 240px
+    height: 240px
+
+    img
+      width: 100%
+      height: auto
+      max-width: 100%
+
+  .cat-name
+    font-size: 29px
+    color: #202020
+    text-decoration: underline
+    text-align: left
+    display: block
+    width: 100%
+    margin-bottom: 5px
+    font-family: $CirceLight
+    +transition(all, 0.3s)
+
+  .cat-price
+    font-size: 26px
+    color: #f7931e
+    font-family: $CirceExtraLight
+    font-weight: bold
+    +transition(all, 0.3s)
+
+.home-header-line
+  display: block
+  width: 100%
+  margin: 20px 0 50px 0
+  text-align: center
+  font-size: 60px
+  color: #2e2d2c
+  font-family: $CirceLight
+
+.cat-helper-img
+  width: 444px
+  position: absolute
+  bottom: -44px
+  right: 0
+  img
+    width: 100%
+    height: auto

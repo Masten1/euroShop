@@ -1,0 +1,29 @@
+<section class="feedbackForm">
+
+    <div class="feedbackForm-content">
+        <span class="feedbackFormTitle">{{'Обратная связь - заполните заявку' | trans}}</span>
+
+        <form method="POST" action="/feedback/save" id="feedback-form">
+
+            <div class="feedback-form-name">
+                <input name="name" type="text" placeholder="Имя*">
+            </div>
+
+            <div class="feedback-form-mail">
+                <input name="mail" type="email" placeholder="E-mail*">
+            </div>
+
+            <div class="feedback-form-text">
+                <textarea name="text" placeholder="Вопрос*"></textarea>
+            </div>
+            <div class="feedback-message">
+                <p>{{'Ваше сообщение отправлено. Наши менеджеры свяжутся с Вами в ближайшее время' | trans}}</p>
+                <span class="glyphicon glyphicon-ok"></span>
+            </div>
+            <button class="feedback-form-submit">{{'Подать заявку' | trans}}</button>
+            <span class="form-helper-message">{{'* -обязательное поле' | trans}}</span>
+        </form>
+
+    </div>
+
+</section>
