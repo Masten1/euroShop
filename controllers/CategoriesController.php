@@ -22,6 +22,12 @@ class CategoriesController extends AppController
             ['depends' => [\yii\web\JqueryAsset::className()]]
         );
 
+        $this->view->registerJsFile(
+            '@web/theme/scripts/categories.js',
+
+            ['depends' => [\yii\web\JqueryAsset::className()]]
+        );
+
 
         return $this->render('index.twig', compact('categories'));
     }

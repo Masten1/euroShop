@@ -39,7 +39,7 @@
       customerText = $("#customer-text").val();
       productPk = $("#product-pk").val();
       return $.ajax({
-        url: "/product/buy",
+        url: "/buy",
         type: "POST",
         dataType: "json",
         data: {

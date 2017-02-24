@@ -7,9 +7,7 @@
  */
 
 namespace app\controllers;
-use app\models\Order;
 use app\models\Product;
-use app\models\Offer;
 
 
 class ProductController extends AppController
@@ -64,37 +62,5 @@ class ProductController extends AppController
         \Yii::$app->view->title = "$product->metaTitle";
 
         return $this->render('view.twig', compact('product'));
-    }
-
-    public function actionBuy()
-    {
-        $data = \Yii::$app->request->post();
-
-        $productId = $data["productId"];
-
-        $product = Product::findOne($productId);
-        $data["totalPrice"] = $product->getPrice();
-        $data["productName"] = $product->title;
-
-        $order = new Order($data);
-
-        if ($order->validate()) {
-            // все данные корректны
-
-            $order->save();
-            $order->sendMail();
-
-            return json_encode([
-                'type' => 'success',
-            ]);
-        } else {
-            // данные не корректны: $errors - массив содержащий сообщения об ошибках
-            $errors = $order->errors;
-
-            return json_encode([
-                'type' => 'error',
-                'errors' => array($errors),
-            ]);
-        }
     }
 }

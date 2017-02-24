@@ -37,7 +37,7 @@ jQuery ($) ->
     customerText = $("#customer-text").val()
     productPk = $("#product-pk").val()
     $.ajax
-      url: "/product/buy"
+      url: "/buy"
       type: "POST"
       dataType: "json"
       data:

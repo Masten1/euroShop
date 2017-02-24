@@ -57,6 +57,7 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 'articles' => 'articles/index',
+                'buy' => 'buy/index',
                 'article/<url>' => 'articles/view',
                 'product/<url>' => 'product/view/',
                 '<url>' => 'staticpage/index/',

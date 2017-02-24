@@ -7,3 +7,5 @@ return [
     'password' => 'a3yhqazm',
     'charset' => 'utf8',
 ];
+
+//test
