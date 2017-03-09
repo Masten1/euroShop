@@ -1,14 +1,8 @@
 <section class="header-nav clearfix">
-    <div class="header-nav-left">
-        <a href="/">
-            <img src="/theme/img/title.png" alt="euro-tehnika.com.ua" title="euro-tehnika.com.ua">
-        </a>
-    </div>
-
     <div class="header-nav-right">
         <ul>
             {% for item in navigation %}
-                {% if item.navIcon %}
+                {% if item.navIcon and item.getProducts() %}
                     <li>
                         <a class="header-nav-right-item" href="{{ item.getHref() }}">
                             <img src="{{ item.navIcon }}" alt="{{ item.name | raw }}">

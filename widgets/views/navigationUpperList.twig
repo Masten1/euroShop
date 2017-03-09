@@ -1,12 +1,5 @@
 <div class="nav-upper-list">
 
-    <div class="upper-phone-list">
-        <a href="{{'ссылка на телефон №3' | trans}}"><span class="glyphicon glyphicon-earphone"></span>{{'телефон №3' | trans}}</a>
-        <a href="{{'ссылка на телефон №4' | trans}}"><span class="glyphicon glyphicon-earphone"></span>{{'телефон №4' | trans}}</a>
-        <a href="{{'ссылка на телефон №5' | trans}}"><span class="glyphicon glyphicon-earphone"></span>{{'телефон №5' | trans}}</a>
-        <a href="{{'ссылка на телефон №6' | trans}}"><span class="glyphicon glyphicon-earphone"></span>{{'телефон №6' | trans}}</a>
-    </div>
-
     <ul>
         {% for item in navigation %}
             <li>
@@ -16,4 +9,21 @@
             </li>
         {% endfor %}
     </ul>
+
+    <div class="upper-logo-block clearfix">
+        <h1><a href="/">{{ 'euro-tehnika.com.ua' | trans }}</a></h1>
+        <div class="upper-phone-list">
+            <a href="{{ 'ссылка на телефон №3' | trans }}"><span
+                        class="glyphicon glyphicon-earphone"></span>{{ 'телефон №3' | trans }}</a>
+            <a href="{{ 'ссылка на телефон №4' | trans }}"><span
+                        class="glyphicon glyphicon-earphone"></span>{{ 'телефон №4' | trans }}</a>
+        </div>
+        <h3>{{ 'Интернет магазин бытовой техники из Европы' | trans }}</h3>
+
+        <div class="header-soc">
+            <a rel="nofollow" target="_blank" class="png-fb soc-header" href="https://www.facebook.com/Euro-tehnika-1201039180015573/"></a>
+            <a rel="nofollow" target="_blank" class="png-vk soc-header" href="https://vk.com/eurotehnikacomua"></a>
+            <a rel="nofollow" target="_blank" class="png-tw soc-header" href="https://twitter.com/euro_tehnika"></a>
+        </div>
+    </div>
 </div>

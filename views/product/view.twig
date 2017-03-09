@@ -40,6 +40,14 @@
 
             {% if product.getBehavior('galleryBehavior').getImages() %}
                 <div id="slick-products-gallery">
+                    {% if product.img %}
+                        <div class="item-slider-product">
+                            <a href="{{ product.img }}" title="{{ product.title | raw }}">
+                                <span></span>
+                                <img src="{{ product.img }}" title="{{ product.title | raw }}" alt="{{ product.title | raw }}">
+                            </a>
+                        </div>
+                    {% endif %}
                     {% for image in product.getBehavior('galleryBehavior').getImages() %}
                         <div class="item-slider-product">
                             <a href="{{ image.getUrl('medium') }}" title="{{ product.title | raw }}">
@@ -146,10 +154,24 @@
             {% else %}
                 <div class="product-one-right-info clearfix">
 
-                    <div class="product-availability product-not-availability">
-                        <span class="glyphicon glyphicon-info-sign"></span>
-                        <p>Нет в наличии</p>
+                    <div class="clearfix">
+                        <div class="product-right-one-saled">
+                            <img src="/theme/img/saled_koi_prodano.png" alt="Товар продан">
+                        </div>
+                        <div class="product-availability product-not-availability">
+                            <p>Рекомендуем посмотреть новые поступления</p>
+                            <div class="product-btn-saled">
+                                <a href="{{ product.getCategoryUrl() }}">
+                                    <span class="glyphicon glyphicon-shopping-cart"></span>Перейти
+                                </a>
+                            </div>
+                        </div>
                     </div>
+                    <div class="product-right-one-arrow">
+                        Жми
+                    </div>
+
+
                 </div>
             {% endif %}
 

@@ -140,7 +140,7 @@
   .col-sm-6-product
     background: white
     padding: 20px
-    +box-shadow(-1px 7px 35px -10px rgba(0,0,0,0.53))
+    +box-shadow(-1px 7px 35px -10px rgba(0, 0, 0, 0.53))
     display: inline-block
     width: 49%
     margin: 0
@@ -161,7 +161,6 @@
     text-align: left
     font-size: 15px
     line-height: 27px
-
 
 .buy-product-wrapper
   display: none
@@ -262,7 +261,6 @@
 .form-line
   margin-bottom: 10px
 
-
 .customer-count-info
   width: 65%
   float: right
@@ -284,7 +282,6 @@
   font-weight: bold
   font-size: 17px
   display: none
-
 
 .product-one-upper-info
   width: 100%
@@ -332,7 +329,6 @@
     .product-rating-star
       &:nth-child(-n+1)
         color: #ffd800
-
 
 .products-btns-share
   line-height: 41px
@@ -393,7 +389,6 @@
 
 .product-one-right-info
 
-
   .product-price-title
     display: block
     float: left
@@ -450,7 +445,6 @@
 
     span
       vertical-align: middle
-
 
 #callback-form-product-one
   display: block
@@ -516,7 +510,7 @@
   border-radius: 4px
   overflow: hidden
   margin-bottom: 30px
-  
+
   .delivery-block-row-6
     width: 50%
     float: left
@@ -539,17 +533,70 @@
     border-bottom: 1px solid #b8c4d1
 
 .product-one-up-right
-  .product-not-availability
-    margin: 0 auto
-    float: initial
+
+  .product-btn-saled
+    background: #33a1ff
+    color: #fff
+    padding: 12px
+    font-size: 17px
+    width: 176px
+    text-align: center
+    border-radius: 0
+    cursor: pointer
+    margin: 0
+    float: right
+    -moz-transition: all, .3s
+    -o-transition: all, .3s
+    -webkit-transition: all, .3s
+    transition: all, .3s
+    margin-top: 80px
+    a
+      color: white
+      display: block
+      width: 100%
 
     span
-      background: #ce561b
-      line-height: 21.5px
+      margin-right: 7px
+      background: transparent
+
+    &:hover, &:active, &:focus
+      background: #1574c5
+
+      a
+        color: white
+        text-decoration: none
+
+  .product-right-one-arrow
+    width: 193px
+    height: 150px
+    float: left
+    margin-left: 20px
+    margin-top: -90px
+    background: url("/theme/img/w512h5121380984784forward.png") center center no-repeat
+    color: #fff
+    text-transform: uppercase
+    font-size: 31px
+    text-align: left
+    padding-top: 49px
+    padding-left: 32px
+
+  .product-not-availability
+    margin: 0 auto
+    float: right
+    width: 303px
+    text-align: right
+    padding-top: 10px
 
     p
-      color: #ce561b
-
+      display: inline
+      float: none
+      vertical-align: top
+      font-size: 21px
+      line-height: 28px
+      margin-right: 0
+      color: #34495e
+      font-weight: bold
+      padding-top: 10px
 
 .product-offer
   margin: 20px 0
@@ -615,3 +662,12 @@
       max-width: 100%
       max-height: 100%
 
+.product-right-one-saled
+  width: 150px
+  float: left
+  margin-left: 20px
+  img
+    width: 100%
+    max-width: 100%
+    height: auto
+    max-height: 100%

@@ -41,7 +41,7 @@ class Product extends ActiveRecord
 
     public function isInStock()
     {
-        if ( $this->inStock )
+        if ( $this->inStock == 1 )
             return true;
 
         return false;
@@ -101,5 +101,20 @@ class Product extends ActiveRecord
             return $offer;
 
         return false;
+    }
+
+    public function getCategoryUrl()
+    {
+        $catId = $this->category_id;
+
+        $cat = Category::findOne("$catId");
+
+        if ( $cat instanceof Category) {
+            $trimUrl = trim($this->url, '/');
+            return "/categories"."/#$trimUrl";
+        } else {
+            return "/";
+        }
+
     }
 }

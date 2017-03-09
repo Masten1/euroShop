@@ -25,8 +25,15 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <div class="wrap">
-    <?=\app\widgets\NavigationUpper::widget();?>
-    <?=\app\widgets\NavigationList::widget();?>
+    <div class="header-scroll-show">
+        <?=\app\widgets\NavigationUpper::widget();?>
+        <?=\app\widgets\NavigationList::widget();?>
+    </div>
+    <div class="header-scroll-hide">
+        <?=\app\widgets\HeaderScrollLine::widget();?>
+        <?=\app\widgets\NavigationList::widget();?>
+    </div>
+
 
     <div class="home-wrapper">
         <?= $content ?>
