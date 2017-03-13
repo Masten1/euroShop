@@ -1,32 +1,32 @@
 .callback-phone {
   @include transition(visibility .5s);
   position: fixed;
-  background-color:transparent;
-  width: 200px;
-  height: 200px;
-  right: 100px;
-  bottom: 50px;
+  background-color: transparent;
+  width: 180px;
+  height: 180px;
+  right: 10px;
+  bottom: 10px;
   cursor: pointer;
   z-index: 9998;
-  -webkit-backface-visibility:hidden;
-  -webkit-transform:translateZ(0);
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
 }
 
 .callback-ph-circle {
   @include transition(all .5s);
-  width:160px;
-  height:160px;
-  top:20px;
-  left:20px;
-  position:absolute;
-  background-color:transparent;
-  border-radius:100%;
-  border:2px solid #f7931e;
-  opacity:.5;
-  -webkit-animation:callback-circle-anim 2.2s infinite ease-in-out;
-  -moz-animation:callback-circle-anim 2.2s infinite ease-in-out;
-  -ms-animation:callback-circle-anim 2.2s infinite ease-in-out;
-  animation:callback-circle-anim 2.2s infinite ease-in-out;
+  width: 140px;
+  height: 140px;
+  top: 20px;
+  left: 20px;
+  position: absolute;
+  background-color: transparent;
+  border-radius: 100%;
+  border: 2px solid #f7931e;
+  opacity: .5;
+  -webkit-animation: callback-circle-anim 2.2s infinite ease-in-out;
+  -moz-animation: callback-circle-anim 2.2s infinite ease-in-out;
+  -ms-animation: callback-circle-anim 2.2s infinite ease-in-out;
+  animation: callback-circle-anim 2.2s infinite ease-in-out;
 }
 
 .callback-phone:hover .callback-ph-circle {
@@ -36,12 +36,12 @@
 
 .callback-ph-circle-fill {
   @include transition(all 0.5s);
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   top: 50px;
   left: 50px;
   position: absolute;
-  background-color: rgba(247,147,30,0.5);
+  background-color: rgba(247, 147, 30, 0.5);
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
   border-radius: 100%;
@@ -61,8 +61,8 @@
 .callback-ph-img-circle {
   width: 60px;
   height: 60px;
-  top: 70px;
-  left: 70px;
+  top: 60px;
+  left: 60px;
   position: absolute;
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABNmlDQ1BQaG90b3Nob3AgSUNDIHByb2ZpbGUAAHjarY6xSsNQFEDPi6LiUCsEcXB4kygotupgxqQtRRCs1SHJ1qShSmkSXl7VfoSjWwcXd7/AyVFwUPwC/0Bx6uAQIYODCJ7p3MPlcsGo2HWnYZRhEGvVbjrS9Xw5+8QMUwDQCbPUbrUOAOIkjvjB5ysC4HnTrjsN/sZ8mCoNTIDtbpSFICpA/0KnGsQYMIN+qkHcAaY6addAPAClXu4vQCnI/Q0oKdfzQXwAZs/1fDDmADPIfQUwdXSpAWpJOlJnvVMtq5ZlSbubBJE8HmU6GmRyPw4TlSaqo6MukP8HwGK+2G46cq1qWXvr/DOu58vc3o8QgFh6LFpBOFTn3yqMnd/n4sZ4GQ5vYXpStN0ruNmAheuirVahvAX34y/Axk/96FpPYgAAACBjSFJNAAB6JQAAgIMAAPn/AACA6AAAUggAARVYAAA6lwAAF2/XWh+QAAAB/ElEQVR42uya7W3CMBCG31QM4A1aNggTlG6QbpBMkHYC1AloJ4BOABuEDcgGtBOETnD9c1ERCH/lwxeaV8oPFGP86Hy+DxMREW5Bd7gRjSDSNGn4/RiAOvm8C0ZCRD5PSkQVXSr1nK/xE3mcWimA1ZV3JYBZCIO4giQANoYxMwYS6+xKY4lT5dJPreWZY+uspqSCKPYN27GJVBDXheVSQe494ksiEWTuMXcu1dld9SARxDX1OAJ4lgjy4zDnFsC076A4adEiRwAZg4hOUSpNoCsBPDGM+HqkNGynYBCuILuWj+dgWysGsNe8nwL4GsrW0m2fxZBq9rW0rNcX5MOQ9eZD8JFahcG5g/iKT671alGAYQggpYWvpEPYWrU/HDTOfeRIX0q2SL3QN4tGhZJukVobQyXYWw7WtLDKDIuM+ZSzscyCE9PCy5IttCvnZNaeiGLNHKuz8ZVh/MXTVu/1xQKmIqLEAuJ0fNo3iG5B51oSkeKnsBi/4bG9gYB/lCytU5G9DryFW+3Gm+JLwU7ehbJrwTjq4DJU8bHcVbEV9dXXqqP6uqO5e2/QZRYJpqu2IUAA4B3tXvx8hgKp05QZW6dJqrLTNkB6vrRURLRwPHqtYgkC3cLWQAcDQGGKH13FER/NATzi786+BPDNjm1dMkfjn2pGkBHkf4D8DgBJDuDHx9BN+gAAAABJRU5ErkJggg==);
   background-color: #f7931e;
@@ -74,7 +74,6 @@
   border: 2px solid transparent;
   opacity: .7;
 }
-
 
 .callback-phone:hover .callback-ph-img-circle {
   background-color: rgba(0, 175, 242, 1);
@@ -152,6 +151,7 @@
     opacity: .2;
   }
 }
+
 @-webkit-keyframes callback-circle-fill-anim {
   0% {
     -webkit-transform: rotate(0deg) scale(0.7) skew(1deg);
@@ -181,6 +181,7 @@
     opacity: .2;
   }
 }
+
 @keyframes callback-circle-img-anim {
   0% {
     transform: rotate(0deg) scale(1) skew(1deg);
@@ -201,6 +202,7 @@
     transform: rotate(0deg) scale(1) skew(1deg);
   }
 }
+
 @-moz-keyframes callback-circle-img-anim {
   0% {
     transform: rotate(0deg) scale(1) skew(1deg);
@@ -221,6 +223,7 @@
     -moz-transform: rotate(0deg) scale(1) skew(1deg);
   }
 }
+
 @-webkit-keyframes callback-circle-img-anim {
   0% {
     -webkit-transform: rotate(0deg) scale(1) skew(1deg);

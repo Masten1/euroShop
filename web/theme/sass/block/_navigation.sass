@@ -4,7 +4,7 @@
   width: 92%
   padding: 8px 0
   margin: -40px auto 0 auto
-  z-index: 9998
+  z-index: 9989
   +box-shadow(0px 4px 11px 1px rgba(222, 222, 222, 0.68))
 
 .header-nav-left
@@ -122,6 +122,7 @@
     width: 395px
     float: left
     text-transform: uppercase
+    @include font-face-helper($CirceLight, 32px, white)
     a
       @include font-face-helper($CirceLight, 32px, white)
       display: block
@@ -175,7 +176,7 @@
 
   &.active
     height: 173px
-    z-index: 9999
+    z-index: 9990
 
   .upper-logo-block
     background: #fc972f

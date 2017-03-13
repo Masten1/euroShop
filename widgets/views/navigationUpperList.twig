@@ -1,5 +1,4 @@
 <div class="nav-upper-list">
-
     <ul>
         {% for item in navigation %}
             <li>
@@ -11,7 +10,13 @@
     </ul>
 
     <div class="upper-logo-block clearfix">
-        <h1><a href="/">{{ 'euro-tehnika.com.ua' | trans }}</a></h1>
+        <h1>
+            {% if requestUrl == "/" %}
+                {{ 'euro-tehnika.com.ua' | trans }}
+            {% else %}
+                <a href="/">{{ 'euro-tehnika.com.ua' | trans }}</a>
+            {% endif %}
+        </h1>
         <div class="upper-phone-list">
             <a href="{{ 'ссылка на телефон №3' | trans }}"><span
                         class="glyphicon glyphicon-earphone"></span>{{ 'телефон №3' | trans }}</a>

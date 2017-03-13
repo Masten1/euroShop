@@ -20,7 +20,7 @@ class MailerToAdmin extends Widget
     {
         \Yii::$app->mailer->compose()
             ->setFrom('mail@euro-tehnika.com.ua')
-            ->setTo('mastenmail@gmail.com')
+            ->setTo(array('masterfrod1991@gmail.com', 'info@euro-tehnika.com.ua'))
             ->setSubject("$this->subject")
             ->setHtmlBody("$this->text")
             ->send();

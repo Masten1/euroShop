@@ -14,6 +14,8 @@ class HeaderScrollLine extends Widget
 {
     function run()
     {
-        return $this->render('scrollLine.twig');
+        $requestUrl = \Yii::$app->request->url;
+
+        return $this->render('scrollLine.twig', array('requestUrl' => "$requestUrl"));
     }
 }

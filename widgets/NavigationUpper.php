@@ -18,6 +18,9 @@ class NavigationUpper extends Widget
     {
         $navigation = Navigation::find()->orderBy('weight ASC')->all();
 
-        return $this->render('navigationUpperList.twig', compact('navigation'));
+        $requestUrl = \Yii::$app->request->url;
+
+
+        return $this->render('navigationUpperList.twig', array('navigation' => $navigation, 'requestUrl' => "$requestUrl"));
     }
 }
