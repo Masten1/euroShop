@@ -83,7 +83,7 @@ class ProductController extends Controller
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
 
-            if ( UploadedFile::getInstance($model, 'file') ) {
+            if (UploadedFile::getInstance($model, 'file')) {
                 // get the instance of the uploaded file
                 $imageName = $transBaseName = Transliterate::transliteration($model->title);
 
@@ -91,12 +91,15 @@ class ProductController extends Controller
 
                 $transBaseName = Transliterate::transliteration($model->file->baseName);
 
-                $model->file->saveAs('uploads/img/'.$imageName.$transBaseName.'.'.$model->file->extension);
+                $model->file->saveAs('uploads/img/' . $imageName . $transBaseName . '.' . $model->file->extension);
 
                 //save the path in the db column
-                $model->img = '/uploads/img/'.$imageName.$transBaseName.'.'.$model->file->extension;
+                $model->img = '/uploads/img/' . $imageName . $transBaseName . '.' . $model->file->extension;
                 $model->save();
             }
+
+            $model->url = "/".Transliterate::transliteration($model->title);
+            $model->save();
 
             return $this->redirect(['index']);
         } else {
@@ -119,7 +122,7 @@ class ProductController extends Controller
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
 
-            if ( UploadedFile::getInstance($model, 'file') ) {
+            if (UploadedFile::getInstance($model, 'file')) {
                 // get the instance of the uploaded file
                 $imageName = $transBaseName = Transliterate::transliteration($model->title);
 
@@ -127,10 +130,10 @@ class ProductController extends Controller
 
                 $transBaseName = Transliterate::transliteration($model->file->baseName);
 
-                $model->file->saveAs('uploads/img/'.$imageName.$transBaseName.'.'.$model->file->extension);
+                $model->file->saveAs('uploads/img/' . $imageName . $transBaseName . '.' . $model->file->extension);
 
                 //save the path in the db column
-                $model->img = '/uploads/img/'.$imageName.$transBaseName.'.'.$model->file->extension;
+                $model->img = '/uploads/img/' . $imageName . $transBaseName . '.' . $model->file->extension;
                 $model->save();
             }
 

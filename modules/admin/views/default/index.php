@@ -7,5 +7,6 @@
         <a href="/admin/callback" class="list-group-item list-group-item-success">Завка на обратный звонок</a>
         <a href="/admin/navigation" class="list-group-item list-group-item-info">Навигация</a>
         <a href="/admin/whywe" class="list-group-item list-group-item-success">Почему мы</a>
+        <a href="/admin/banner" class="list-group-item list-group-item-success">Баннер на главной/a>
     </div>
 </div>

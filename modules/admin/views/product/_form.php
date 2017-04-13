@@ -58,6 +58,8 @@ use mihaildev\ckeditor\CKEditor;
 
     <?= $form->field($model, 'category_id')->dropDownList($model->getCategoryList()) ?>
 
+    <?= $form->field($model, 'videoIframe')->textInput(['maxlength' => true]) ?>
+
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>

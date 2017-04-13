@@ -16,7 +16,7 @@ class Module extends \yii\base\Module
 
     /**
      * @inheritdoc
-     */
+     */ 
     public function init()
     {
         $this->layout = "main-admin";

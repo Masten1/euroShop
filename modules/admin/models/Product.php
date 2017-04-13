@@ -28,6 +28,7 @@ use Imagine\Image;
  * @property integer $inStock
  * @property string $oldPrice
  * @property integer $rating
+ * @property string $videoIframe
  *
  * @property Product $category
  * @property Product[] $products
@@ -51,8 +52,8 @@ class Product extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'url', 'description', 'price', 'rating'], 'required'],
-            [['description', 'metaTitle', 'metaDescription', 'metaKeywords', 'howBuy', 'specification'], 'string'],
+            [['title', 'description', 'price', 'rating'], 'required'],
+            [['description', 'metaTitle', 'metaDescription', 'metaKeywords', 'howBuy', 'specification', 'videoIframe'], 'string'],
             [['price', 'oldPrice'], 'number'],
             [['file'], 'file'],
             [['isRecommend', 'isInfo', 'category_id', 'inStock', 'rating'], 'integer'],
@@ -81,7 +82,8 @@ class Product extends \yii\db\ActiveRecord
             'category_id' => 'Категория товара',
             'howBuy' => 'Как купить',
             'rating' => 'Рейтинг товара',
-            'oldPrice' => 'Старая цена'
+            'oldPrice' => 'Старая цена',
+            'videoIframe' => 'Ссылка на код фрейма(видео)'
         ];
     }
 

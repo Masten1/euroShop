@@ -1,11 +1,29 @@
+DirectoryIndex index.php index.html
+php_flag magic_quotes_gpc Off
 
-IndexIgnore */*
+<IfModule mod_rewrite.c>
 
-RewriteEngine on
+    IndexIgnore */*
 
-# if a directory or a file exists, use it directly
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteEngine on
+    RewriteBase /
 
-# otherwise forward it to index.php
-RewriteRule . index.php
+    RewriteCond %{HTTP_HOST} ^www\.euro-tehnika\.com.ua$ [NC]
+    RewriteRule ^(.*)$ http://euro-tehnika.com.ua/$1 [R=301,L]
+
+
+    # if a directory or a file exists, use it directly
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    ErrorDocument 404 /404
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^/?(ua|ru|en)/?([a-zA-Z0-9_\-\/]*)$ /index.php?__lang=$1&__url=$2 [L,QSA]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^/?([a-zA-Z0-9_\-\/]*)$ /index.php?__lang=ru&__url=$1 [L,QSA]
+
+</IfModule>
+AddDefaultCharset UTF-8
+AddType text/x-component .htc

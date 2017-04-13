@@ -44,6 +44,7 @@ $(document).ready(function(){
         speed: 300,
         slidesToShow: 1,
         slidesToScroll: 1,
+        asNavFor: '.slider-nav-thumbnails',
         responsive: [
             {
                 breakpoint: 1024,
@@ -72,5 +73,20 @@ $(document).ready(function(){
             // settings: "unslick"
             // instead of a settings object
         ]
+    });
+
+    $('.slider-nav-thumbnails').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        asNavFor: '#slick-products-gallery',
+        dots: false,
+        focusOnSelect: true
+    });
+
+    // On before slide change match active thumbnail to current slide
+    $('.slider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+        var mySlideNumber = nextSlide;
+        $('.slider-nav-thumbnails .slick-slide').removeClass('slick-active');
+        $('.slider-nav-thumbnails .slick-slide').eq(mySlideNumber).addClass('slick-active');
     });
 });

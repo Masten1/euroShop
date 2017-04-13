@@ -29,6 +29,11 @@
     border: 0 !important
     display: inline-block
 
+  iframe
+    width: 100%
+    max-width: 100%
+    max-height: 100%
+
 #slick-products-gallery
   width: 100%
   margin: 0 auto
@@ -671,3 +676,33 @@
     max-width: 100%
     height: auto
     max-height: 100%
+
+.slider-nav-thumbnails
+  outline: none
+  +user-select(none)
+  margin-top: 20px
+
+  .slick-arrow
+    display: none !important
+
+  .slick-slide
+    height: 150px
+    text-align: center
+    outline: none
+    +user-select(none)
+    border: 1px solid #fc972f
+    border-radius: 15%
+    margin: 0 10px
+    padding: 12px
+
+    img
+      max-width: 100%
+      height: auto
+      max-height: 100%
+      display: inline-block
+
+.slider-nav-thumbnails .slick-slide
+  opacity: 0.5
+
+.slider-nav-thumbnails .slick-slide.slick-active
+  opacity: 1

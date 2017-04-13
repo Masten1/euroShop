@@ -16,16 +16,22 @@
             <div class="product-btns-helper">
                 <div class="products-btns-share">
                     <span class="products-btns-share-title">Поделиться: </span>
-                    <script type="text/javascript">(function() {
+                    <script type="text/javascript">(function () {
                             if (window.pluso)if (typeof window.pluso.start == "function") return;
-                            if (window.ifpluso==undefined) { window.ifpluso = 1;
+                            if (window.ifpluso == undefined) {
+                                window.ifpluso = 1;
                                 var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
-                                s.type = 'text/javascript'; s.charset='UTF-8'; s.async = true;
-                                s.src = ('https:' == window.location.protocol ? 'https' : 'http')  + '://share.pluso.ru/pluso-like.js';
-                                var h=d[g]('body')[0];
+                                s.type = 'text/javascript';
+                                s.charset = 'UTF-8';
+                                s.async = true;
+                                s.src = ('https:' == window.location.protocol ? 'https' : 'http') + '://share.pluso.ru/pluso-like.js';
+                                var h = d[g]('body')[0];
                                 h.appendChild(s);
-                            }})();</script>
-                    <div class="pluso" data-background="transparent" data-options="medium,round,line,horizontal,nocounter,theme=08" data-services="facebook,twitter,google,vkontakte,odnoklassniki,email"></div>
+                            }
+                        })();</script>
+                    <div class="pluso" data-background="transparent"
+                         data-options="medium,round,line,horizontal,nocounter,theme=08"
+                         data-services="facebook,twitter,google,vkontakte,odnoklassniki,email"></div>
                 </div>
 
                 <div class="product-btns-helper-block clearfix">
@@ -44,7 +50,8 @@
                         <div class="item-slider-product">
                             <a href="{{ product.img }}" title="{{ product.title | raw }}">
                                 <span></span>
-                                <img src="{{ product.img }}" title="{{ product.title | raw }}" alt="{{ product.title | raw }}">
+                                <img src="{{ product.img }}" title="{{ product.title | raw }}"
+                                     alt="{{ product.title | raw }}">
                             </a>
                         </div>
                     {% endif %}
@@ -52,8 +59,28 @@
                         <div class="item-slider-product">
                             <a href="{{ image.getUrl('medium') }}" title="{{ product.title | raw }}">
                                 <span></span>
-                                <img src="{{ image.getUrl('medium') }}" title="{{ product.title | raw }}" alt="{{ product.title | raw }}">
+                                <img src="{{ image.getUrl('medium') }}" title="{{ product.title | raw }}"
+                                     alt="{{ product.title | raw }}">
                             </a>
+                        </div>
+                    {% endfor %}
+                    {% if product.videoIframe %}
+                        <div class="item-slider-product">
+                            {{ product.videoIframe | raw }}
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="slider-nav-thumbnails">
+                    {% if product.img %}
+                        <div>
+                            <img src="{{ product.img }}" title="{{ product.title | raw }}"
+                                 alt="{{ product.title | raw }}">
+                        </div>
+                    {% endif %}
+                    {% for image in product.getBehavior('galleryBehavior').getImages() %}
+                        <div>
+                            <img src="{{ image.getUrl('medium') }}" title="{{ product.title | raw }}"
+                                 alt="{{ product.title | raw }}">
                         </div>
                     {% endfor %}
                 </div>
@@ -88,7 +115,7 @@
                         <div class="product-old-price">{{ product.getOldPrice() }} <span>грн</span></div>
                     {% endif %}
 
-                    <div class="product-btn"> <span class="glyphicon glyphicon-shopping-cart"></span>Купить</div>
+                    <div class="product-btn"><span class="glyphicon glyphicon-shopping-cart"></span>Купить</div>
                 </div>
 
                 <div class="product-buy-click clearfix">
@@ -101,19 +128,21 @@
                     </div>
                     <form method="POST" action="/callback/save" id="callback-form-product-one">
                         <div class="callback-form-phone clearfix">
-                            <input id="callback-phone-product" name="phone" type="tel" placeholder="38( ___ ) ___ - __ - __">
+                            <input id="callback-phone-product" name="phone" type="tel"
+                                   placeholder="38( ___ ) ___ - __ - __">
                             <button class="feedback-form-submit">Заказать</button>
                         </div>
                     </form>
                     <div class="callback-message-product">
-                        <p>Ваша заявка отправлена. Наши менеджеры свяжутся с Вами в ближайшее время <span class="glyphicon glyphicon-ok"></span></p>
+                        <p>Ваша заявка отправлена. Наши менеджеры свяжутся с Вами в ближайшее время <span
+                                    class="glyphicon glyphicon-ok"></span></p>
                     </div>
                 </div>
 
                 {% if product.getOffer() %}
                     <div class="product-offer">
                         <div class="product-offer-title"><span class="glyphicon glyphicon-thumbs-up"></span>Акция</div>
-                        <div id="getting-started" data-date="{{ product.getOffer().dateToEnd | raw  }}"></div>
+                        <div id="getting-started" data-date="{{ product.getOffer().dateToEnd | raw }}"></div>
                         <a href="{{ product.getOffer().url | raw }}" target="_blank" class="clearfix">
                             <div class="product-offer-date-block">
                                 <div class="product-offer-date-block-title">До конца акции осталось:</div>
@@ -187,7 +216,7 @@
         </div>
         <div class="col-sm-6-product">
             <div class="product-one-down-title">описание</div>
-            <div class="product-one-down-text">{{ product.howBuy | raw }}</div>
+            <div class="product-one-down-text">{{ product.specification | raw }}</div>
         </div>
     </div>
 </section>
@@ -196,7 +225,7 @@
     <form method="POST" action="/buy" id="form-product-buy">
         <span class="close-form">X</span>
 
-        <div class="form-helper-text-small">{{'Для осуществления предзаказа Вам необходимо заполнить все поля формы ниже:' | trans}}</div>
+        <div class="form-helper-text-small">{{ 'Для осуществления предзаказа Вам необходимо заполнить все поля формы ниже:' | trans }}</div>
 
         <div class="form-line">
             <label for="customer-name">ФИО: <span>*</span></label>
@@ -217,7 +246,7 @@
 
         <div class="form-line clearfix">
             <div class="customer-count-info">
-                <span>{{'Общая цена заказа:' | trans}}</span>
+                <span>{{ 'Общая цена заказа:' | trans }}</span>
 
                 <div id="customer-count-result">{{ product.getPrice() }} грн.</div>
             </div>
@@ -225,8 +254,8 @@
 
         <input type="hidden" id="product-pk" value="{{ product.primaryKey }}">
 
-        <div class="customer-message">{{'Ваш заказ успешно оформлен, наши менеджеры свяжутся с Вами в ближайшее время:' | trans}}</div>
+        <div class="customer-message">{{ 'Ваш заказ успешно оформлен, наши менеджеры свяжутся с Вами в ближайшее время:' | trans }}</div>
 
-        <button>{{'Купить' | trans}}</button>
+        <button>{{ 'Купить' | trans }}</button>
     </form>
 </div>

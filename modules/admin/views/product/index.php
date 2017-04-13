@@ -28,8 +28,11 @@ $this->params['breadcrumbs'][] = $this->title;
 
             [
                 'attribute' => 'img',
-                'format' => 'image',
-                'value'=>function($data) { return $data->imageurl; },
+                'format' => 'html',
+                'value' => function ($data) {
+                    return Html::img(Yii::getAlias('@web').$data->imageurl,
+                        ['width' => '70px']);
+                },
             ],
             //'description:ntext',
             [
